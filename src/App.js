@@ -4,6 +4,7 @@ import { useState } from 'react';
 
 function App() {
   const [name,setname]=useState([])
+  const [change,changename]=useState([])
   const find =()=>{
   
     fetch(`https://today-server.vercel.app/api`,{
@@ -21,6 +22,7 @@ function App() {
     })
     .then((data)=>{
       console.log(data);
+      changename(data.user)
       // setname(data)
     })
   }
@@ -32,7 +34,8 @@ function App() {
  <button onClick={find}>
   click
   </button> 
-  {name}
+  {/* {name} */}
+  {change}
     </div>
   );
 }
