@@ -21,6 +21,7 @@ function App() {
  <button onClick={find}>
   click
   </button> 
+  {name}
     </div>
   );
 }
