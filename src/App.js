@@ -1,7 +1,7 @@
 import logo from './logo.svg';
 import './App.css';
 const find =()=>{
-  fetch('https://today-server.vercel.app/')
+  fetch('https://today-server.vercel.app/api')
   .then((res)=>res.json())
   .then((data)=>{
     console.log(data);
