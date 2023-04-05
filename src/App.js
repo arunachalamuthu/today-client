@@ -6,14 +6,22 @@ function App() {
   const [name,setname]=useState([])
   const find =()=>{
   
-    fetch(`https://today-server.vercel.app/api${name}`)
+    fetch(`https://today-server.vercel.app/api`,{
+      method:"POST",
+      headers:{
+        "Content-type":"application/json"
+      },
+      body:JSON.stringify({user:name})
+      
+    })
+
     .then((res)=>{
       console.log(res)
       return res.json()
     })
     .then((data)=>{
       console.log(data);
-      setname(data)
+      // setname(data)
     })
   }
   return (
