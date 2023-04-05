@@ -6,7 +6,7 @@ function App() {
   const [name,setname]=useState([])
   const find =()=>{
   
-    fetch('https://today-server.vercel.app/api')
+    fetch(`https://today-server.vercel.app/api${name}`)
     .then((res)=>{
       console.log(res)
       return res.json()
@@ -18,6 +18,9 @@ function App() {
   }
   return (
    <div>
+    <input type="text" onChange={(e)=>{
+      setname(e.target.value)
+    }} />
  <button onClick={find}>
   click
   </button> 
